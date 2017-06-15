@@ -5,3 +5,27 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+breeds = [
+          'Poodle',
+          'Dingo',
+          'Beagle',
+          'Eagle',
+          'Evil',
+          'Good',
+          'Raccoon',
+          'Shi-tzu',
+          'Sharpait',
+          'Boxer',
+          'Wrestler',
+          'Rugby Player',
+          'Weiner Dog',
+          'Chiuhuahua'
+        ]
+
+breeds.each do |breed|
+  Breed.create(name: breed)
+end
+
+puts "Your breeds have been seeded. Hooray!"
+
