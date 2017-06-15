@@ -1,24 +1,31 @@
 <p id="notice"><%= notice %></p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4
+                col-sm-6 col-sm-offset-6
+                text-center">
+      <p>
+        <strong>Name:</strong>
+        <%= @vet.name %>
+      </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @vet.name %>
-</p>
+      <p>
+        <strong>Clinic:</strong>
+        <%= @vet.clinic %>
+      </p>
 
-<p>
-  <strong>Clinic:</strong>
-  <%= @vet.clinic %>
-</p>
+      <p>
+        <strong>Phone:</strong>
+        <%= @vet.phone %>
+      </p>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @vet.phone %>
-</p>
+      <p>
+        <strong>Fax:</strong>
+        <%= @vet.fax %>
+      </p>
 
-<p>
-  <strong>Fax:</strong>
-  <%= @vet.fax %>
-</p>
-
-<%= link_to 'Edit', edit_vet_path(@vet) %> |
-<%= link_to 'Back', vets_path %>
+      <%= link_to 'Edit', edit_vet_path(@vet), class: 'btn btn-default btn-sm' %>
+      <%= link_to 'Back', vets_path, class: 'btn btn-default btn-sm' %>
+    </div>
+  </div>
+</div>

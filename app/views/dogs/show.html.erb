@@ -1,45 +1,53 @@
 <p id="notice"><%= notice %></p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4
+                col-sm-6 col-sm-offset-3
+                text-center">
+      <p>
+        <strong>Name:</strong>
+        <%= @dog.name %>
+      </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @dog.name %>
-</p>
+      <p>
+        <strong>Breed:</strong>
+        <%= @dog.breed.try(:name) %>
+      </p>
 
-<p>
-  <strong>Breed:</strong>
-  <%= @dog.breed %>
-</p>
+      <p>
+        <strong>Dob:</strong>
+        <%= @dog.dob %>
+      </p>
 
-<p>
-  <strong>Dob:</strong>
-  <%= @dog.dob %>
-</p>
+      <p>
+        <strong>Weight:</strong>
+        <%= @dog.weight %>
+      </p>
 
-<p>
-  <strong>Weight:</strong>
-  <%= @dog.weight %>
-</p>
+      <p>
+        <strong>Vet:</strong>
+        <%= @dog.vet.try(:name) %>
+      </p>
 
-<p>
-  <strong>Vet:</strong>
-  <%= @dog.vet %>
-</p>
+      <p>
+        <strong>In daycare:</strong>
+        <%= @dog.in_daycare %>
+      </p>
 
-<p>
-  <strong>In daycare:</strong>
-  <%= @dog.in_daycare %>
-</p>
+      <p>
+        <strong>Owners:</strong>
 
-<p>
-  <strong>Owners:</strong>
+        <ul class="list-group">
+          <% @dog.owners.each do |owner| %>
+            <li class="list-group-item"><%= owner.try(:name) %></li>
+          <% end %>
+        </ul>
 
-  <ul>
-    <% @dog.owners.each do |owner| %>
-      <li><%= owner.try(:name) %></li>
-    <% end %>
-  </ul>
+      </p>
 
-</p>
+      <%= link_to 'Edit', edit_dog_path(@dog), class: 'btn btn-default btn-sm' %>
+      <%= link_to 'Back', dogs_path, class: 'btn btn-default btn-sm' %>
+    </div>
+  </div>
+</div>
 
-<%= link_to 'Edit', edit_dog_path(@dog) %> |
-<%= link_to 'Back', dogs_path %>

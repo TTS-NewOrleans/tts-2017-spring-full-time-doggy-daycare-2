@@ -1,6 +1,6 @@
 class Dog < ApplicationRecord
   belongs_to :breed
-  belongs_to :vet
+  belongs_to :vet, optional: true
   has_many :custodies
   has_many :owners, through: :custodies
   accepts_nested_attributes_for :custodies

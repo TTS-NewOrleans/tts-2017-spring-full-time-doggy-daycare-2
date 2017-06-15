@@ -1,5 +1,13 @@
-<h1>New Dog</h1>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4
+                col-sm-6 col-sm-offset-3">
+      <h1>New Dog</h1>
 
-<%= render 'form', dog: @dog %>
+      <%= render 'form', dog: @dog %>
 
-<%= link_to 'Back', dogs_path %>
+      <%= link_to 'Show', @dog, class: 'btn btn-default btn-sm' %>
+      <%= link_to 'Back', dogs_path, class: 'btn btn-default btn-sm' %>
+    </div>
+  </div>
+</div>

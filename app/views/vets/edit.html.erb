@@ -1,6 +1,14 @@
-<h1>Editing Vet</h1>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4
+                col-sm-6 col-sm-offset-6">
+      <h1>Editing Vet</h1>
 
-<%= render 'form', vet: @vet %>
+      <%= render 'form', vet: @vet %>
 
-<%= link_to 'Show', @vet %> |
-<%= link_to 'Back', vets_path %>
+      <%= link_to 'Show', @vet, class: 'btn btn-default btn-sm' %>
+      <%= link_to 'Back', vets_path, class: 'btn btn-default btn-sm' %>
+    </div>
+  </div>
+</div>
+

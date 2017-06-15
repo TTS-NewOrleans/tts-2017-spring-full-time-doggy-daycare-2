@@ -1,6 +1,6 @@
 class Custody < ApplicationRecord
-  belongs_to :owner
-  belongs_to :dog
+  belongs_to :owner, optional: true
+  belongs_to :dog, optional: true
 end
 
 # == Schema Information

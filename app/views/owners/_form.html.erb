@@ -2,18 +2,19 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :first_name %>
-    <%= f.input :last_name %>
-    <%= f.input :phone %>
-    <%= f.input :address %>
-    <%= f.input :city %>
-    <%= f.input :state %>
-    <%= f.input :zip %>
-    <%= f.input :emergency_name %>
-    <%= f.input :emergency_phone %>
+    <%= f.input :first_name, class: 'form-control' %>
+    <%= f.input :last_name, class: 'form-control' %>
+    <%= f.input :phone, class: 'form-control' %>
+    <%= f.input :address, class: 'form-control' %>
+    <%= f.input :city, class: 'form-control' %>
+    <%= f.input :state, class: 'form-control' %>
+    <%= f.input :zip, class: 'form-control' %>
+    <%= f.input :emergency_name, class: 'form-control' %>
+    <%= f.input :emergency_phone, class: 'form-control' %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, class: 'btn btn-success btn-sm' %>
   </div>
+  <br>
 <% end %>

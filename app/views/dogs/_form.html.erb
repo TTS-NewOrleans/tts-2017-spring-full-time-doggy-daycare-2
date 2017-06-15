@@ -2,14 +2,14 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.association :breed %>
-    <%= f.input :dob %>
-    <%= f.input :weight %>
-    <%= f.association :vet %>
-    <%= f.input :in_daycare %>
+    <%= f.input :name, class: 'form-control' %>
+    <%= f.association :breed, class: 'form-control' %>
+    <%= f.input :dob, class: 'form-control' %>
+    <%= f.input :weight, class: 'form-control' %>
+    <%= f.association :vet, class: 'form-control' %>
+    <%= f.input :in_daycare, class: 'form-control' %>
     <%= f.simple_fields_for(:custodies) do |custody_fields| %>
-      <%= custody_fields.association :owner, collection: Owner.order(:last_name, :first_name) %>
+      <%= custody_fields.association :owner, collection: Owner.order(:last_name, :first_name), class: 'form-control' %>
       <%# Only show the destroy checkbox if a record is already saved  %>
       <% if custody_fields.object.persisted? %>
         <%= custody_fields.input :_destroy, as: :boolean %>
@@ -18,6 +18,7 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, class: 'btn btn-success btn-sm' %>
   </div>
+  <br>
 <% end %>

@@ -2,13 +2,14 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :clinic %>
-    <%= f.input :phone %>
-    <%= f.input :fax %>
+    <%= f.input :name, class: 'form-control' %>
+    <%= f.input :clinic, class: 'form-control' %>
+    <%= f.input :phone, class: 'form-control' %>
+    <%= f.input :fax, class: 'form-control' %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, class: 'btn btn-success btn-sm' %>
   </div>
+  <br>
 <% end %>

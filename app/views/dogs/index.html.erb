@@ -1,37 +1,43 @@
 <p id="notice"><%= notice %></p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <h1>Dogs</h1>
 
-<h1>Dogs</h1>
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Breed</th>
+            <th>Dob</th>
+            <th>Weight</th>
+            <th>Vet</th>
+            <th>In daycare</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Breed</th>
-      <th>Dob</th>
-      <th>Weight</th>
-      <th>Vet</th>
-      <th>In daycare</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+        <tbody>
+          <% @dogs.each do |dog| %>
+            <tr>
+              <td><%= dog.name %></td>
+              <td><%= dog.breed.name %></td>
+              <td><%= dog.dob.stamp("April 29, 1976") %></td>
+              <td><%= dog.weight %> lbs</td>
+              <td><%= dog.vet.name %></td>
+              <td><%= dog.in_daycare %></td>
+              <td><%= link_to 'Show', dog %></td>
+              <td><%= link_to 'Edit', edit_dog_path(dog) %></td>
+              <td><%= link_to 'Destroy', dog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
 
-  <tbody>
-    <% @dogs.each do |dog| %>
-      <tr>
-        <td><%= dog.name %></td>
-        <td><%= dog.breed %></td>
-        <td><%= dog.dob %></td>
-        <td><%= dog.weight %></td>
-        <td><%= dog.vet %></td>
-        <td><%= dog.in_daycare %></td>
-        <td><%= link_to 'Show', dog %></td>
-        <td><%= link_to 'Edit', edit_dog_path(dog) %></td>
-        <td><%= link_to 'Destroy', dog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <br>
 
-<br>
+      <%= link_to 'New Dog', new_dog_path, class: 'btn btn-success btn-sm' %>
+    </div>
+  </div>
+</div>
 
-<%= link_to 'New Dog', new_dog_path %>
